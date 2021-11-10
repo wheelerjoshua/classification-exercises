@@ -8,3 +8,5 @@ iris.csv
 telco.csv
 *.csv
 *.xlsx
+*lesson*
+*notes*
