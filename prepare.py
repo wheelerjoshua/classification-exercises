@@ -76,8 +76,9 @@ def prep_titanic(df):
     Takes in titanic dataframe and returns prepared version of the dataframe
     '''
     df.drop_duplicates(inplace = True)
-    df.drop(columns = ['age', 'embarked', 'deck','class'], inplace=True)
     dummy_df = pd.get_dummies(df[['sex','embark_town']], dummy_na = False, drop_first = [True, True])
+    df.drop(columns = ['sex', 'embark_town', 'age', 'embarked', 'deck','class'], inplace=True)
+
     df = pd.concat([df, dummy_df], axis = 1)
     return df
 
